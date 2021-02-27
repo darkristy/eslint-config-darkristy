@@ -1,6 +1,6 @@
 # No-Sweat™ ESLint, Prettier and TypeScript setup
 
-These are my settings for ESLint and Prettier
+This are settings forked from [sarpik](https://github.com/sarpik/eslint-config-sarpik/) but with some of my tweaks.
 
 You might like them - or you might not. Don't worry you can always change them.
 
@@ -22,13 +22,13 @@ I also install globally so that any project or rogue JS file I write will have l
 
 ## Staying up-to-date
 
-You can [watch the repo (releases only) on github](https://github.com/sarpik/eslint-config-sarpik/watchers) to get notified once I release a new version! 🚀
+You can [watch his repo (releases only) on github](https://github.com/sarpik/eslint-config-sarpik/watchers) to get notified once I release a new version! 🚀
 
 ## Local / Per project install
 
 ```sh
 yarn init -y                                            # Create 'package.json' if you haven't already
-npx install-peerdeps --dev eslint-config-sarpik --yarn  # Install everything needed by the config
+npx install-peerdeps --dev eslint-config-darkristy --yarn  # Install everything needed by the config
                                                         # You can see in your package.json there's now a big list of devDependencies
 touch .eslintrc.js                                      # Create the config file @ the project's root
 ```
@@ -38,7 +38,7 @@ Your `.eslintrc.js` file should look like this:
 ```js
 module.exports = {
   "extends": [
-    "sarpik"
+    "darkristy"
   ]
 }
 ```
@@ -61,7 +61,7 @@ Now you can manually lint your code by running `yarn lint` (`npm run lint`) and 
 1. First install everything needed:
 
 ```
-npx install-peerdeps --global eslint-config-sarpik --yarn
+npx install-peerdeps --global eslint-config-darkristy --yarn
 ```
 
 (**note:** npx is not a spelling mistake of **npm**. `npx` comes with when `node` and `npm` are installed and makes script running easier 😃 (and it works automatically with yarn, too!))
@@ -78,7 +78,7 @@ Your `.eslintrc.js` file should look like this:
 ```js
 module.exports = {
   "extends": [
-    "sarpik"
+    "darkristy"
   ]
 }
 ```
@@ -92,7 +92,7 @@ If you'd like to overwrite eslint or prettier settings, you can add the rules in
 ```js
 module.exports = {
   "extends": [
-    "sarpik"
+    "darkristy"
   ],
   "rules": {
     "no-console": 2,
@@ -176,9 +176,9 @@ See also [the README of vscode-eslint](https://github.com/microsoft/vscode-eslin
 
 ## With Create React App
 
-1. Run `npx install-peerdeps eslint-config-sarpik --dev --yarn`
+1. Run `npx install-peerdeps eslint-config-darkristy --dev --yarn`
 1. Crack open your `package.json` and
-   1.  replace `"extends": "react-app"` with `"extends": "sarpik"`
+   1.  replace `"extends": "react-app"` with `"extends": "darkristy"`
    1.  replace `"eslint": "5.x"` with `"eslint": "6.x"` like so: `yarn add eslint@6.x`, or replace yourself & run `yarn install`
 		1. verify that eslint's version is `6.x.y`: run `node node_modules/.bin/eslint --version`
    1. if you're using typescript, append `--ext js,jsx,ts,tsx` every time you call `eslint` (required for eslint `6.x`, see https://github.com/sarpik/eslint-config-sarpik/issues/4)
@@ -192,7 +192,7 @@ Your `package.json` should have this:
 		"lint:fix": "eslint . --ext js,jsx,ts,tsx --fix"
 	},
 	"eslintConfig": {
-		"extends": "sarpik"
+		"extends": "darkristy"
 	},
 	"devDependencies": {
 		"eslint": "6.x"
@@ -207,7 +207,7 @@ Example repo with commits as setting up steps: https://github.com/sarpik/cra-esl
 Start fresh. Sometimes global modules can goof you up. This will remove them all:
 
 ```
-yarn global remove eslint-config-sarpik @typescript-eslint/parser @typescript-eslint/eslint-plugin typescript eslint eslint-config-prettier eslint-config-airbnb eslint-plugin-html eslint-plugin-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react prettier eslint-plugin-react-hooks
+yarn global remove eslint-config-darkristy @typescript-eslint/parser @typescript-eslint/eslint-plugin typescript eslint eslint-config-prettier eslint-config-airbnb eslint-plugin-html eslint-plugin-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react prettier eslint-plugin-react-hooks
 ```
 
 To do the above for local, omit the `--global` flag.
