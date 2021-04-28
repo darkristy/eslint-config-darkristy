@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-darkristy",
-	"version": "0.2.17",
+	"version": "0.2.18",
 	"description": "ESLint, Prettier and TypeScript setup",
 	"main": "index.js",
 	"author": "Kahlil Whitfield",
